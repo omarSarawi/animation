@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Image</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+
+        }
+
+        @keyframes moveTopToRight {
+            0% {
+                top: 5%;
+                left: 5%;
+            }
+
+            25% {
+                top: 5%;
+                left: calc(90% - 50px);
+            }
+
+            50% {
+                top: calc(90% - 50px);
+                left: calc(90% - 50px);
+            }
+
+            75% {
+                top: calc(90% - 50px);
+                left: 5%;
+            }
+
+            100% {
+                top: 5%;
+                left: 5%;
+            }
+        }
+
+        @keyframes moveToMiddle {
+            0% {
+                top: calc(28% - 25px);
+                left: calc(28% - 25px);
+            }
+
+            100% {
+                top: calc(45% - 25px);
+                left: calc(45% - 25px);
+            }
+        }
+
+        @keyframes changecolor {
+
+            to {
+                background-color: blue;
+            }
+
+            from {
+                background-color: white;
+            }
+
+        }
+
+        .moving-image {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: moveTopToRight linear 10s, moveToMiddle 1s 10s forwards;
+            margin: auto;
+        }
+
+        #img {
+            width: 150px;
+            height: auto;
+            margin: auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="moving-image">
+        <img id="img" src="image-wolf.jpg" alt="">
+    </div>
+</body>
+
+</html>
